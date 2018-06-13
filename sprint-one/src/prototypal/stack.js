@@ -1,24 +1,27 @@
-// var Stack = function() {
-//   var someInstance = Object.create(Stack.prototype);
-//   someInstance.storage = {};
-//   someInstance.counter = 0;
-//   return someInstance;
-// };
+var Stack = function() {
+  var someInstance = Object.create(stackMethods);
+  someInstance.storage = {};
+  someInstance.counter = 0;
+  return someInstance;
+};
 
-// Stack.prototype.push = function(string){
-//   this.storage[this.counter] = string;
-//   this.counter ++;
-// };
+var stackMethods = {
+};
 
-// Stack.prototype.pop = function(){
-//   if (this.counter > 0){
-//     this.counter --;
-//     return this.storage[this.counter];
-//   };
-// };
+stackMethods.push = function(string){
+  this.storage[this.counter] = string;
+  this.counter ++;
+};
 
-// Stack.prototype.size = function(){
-//   return this.counter;
-// };
+stackMethods.pop = function(){
+  if (this.counter > 0){
+    this.counter --;
+    return this.storage[this.counter];
+  };
+};
+
+stackMethods.size = function(){
+  return this.counter;
+};
 
 
