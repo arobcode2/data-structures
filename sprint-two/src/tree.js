@@ -20,9 +20,6 @@ treeMethods.contains = function(target) {
       doesContain = true
       return doesContain
     } else {
-    //pop down to a each child
-    //check if child has the value we want if it does, set Does containt to true, and return it//
-    //else pop down ...
     for (var i = tree.children.length - 1; i >= 0; i--) {
       hasTarget(tree.children[i])
     }
