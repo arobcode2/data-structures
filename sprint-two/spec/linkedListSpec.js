@@ -44,12 +44,31 @@ describe('linkedList', function() {
     expect(linkedList.contains(6)).to.equal(false);
   });
 
+  it('should have method named addAfterNode', function() {
+    expect(linkedList.addAfterNode).to.be.a('function');
+  });
+
+  it('should add value after given node', function() {
+    linkedList.addToTail(5);
+    linkedList.addToTail(7);
+    linkedList.addAfterNode(5, 6);
+    expect(linkedList.head.value).to.equal(5);
+    expect(linkedList.head.next.value).to.equal(6);
+    expect(linkedList.contains(6)).to.equal(true);
+    expect(linkedList.head.next.next.value).to.equal(7);
+    expect(linkedList.tail.value).to.equal(7);
+  });
+
   it('should not contain a value that was removed', function() {
     linkedList.addToTail(4);
     linkedList.addToTail(5);
     linkedList.removeHead();
     expect(linkedList.contains(4)).to.equal(false);
   });
+
+   it('it should be hecka sweet', function () {
+    expect(true).to.equal(true);
+});
 
   // add more tests here to test the functionality of linkedList
 });

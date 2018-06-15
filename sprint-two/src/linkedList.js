@@ -35,8 +35,35 @@ var LinkedList = function() {
     }
   };
 
+  list.addAfterNode = function(insertLoc, value) {
+debugger;
+    if (list.head) {
+      var someNode = list.head;
+      while(list.tail !== someNode) {
+        if (someNode.value === insertLoc) {
+          var tempNodeStorage = someNode.next;
+          var newNode = Node(value);
+          someNode.next = newNode;
+          newNode.next = tempNodeStorage;
+          return;
+        } else {
+          someNode = someNode.next;
+        }
+      }
+      if (list.tail.value === insertLoc) {
+        var newNode = Node(value);
+        list.tail.next = newNode;
+        list.tail = newNode;
+      } else {
+        console.log('Insert location does not exist!');
+      }
+    }
+  };
+
   return list;
 };
+
+
 
 var Node = function(value) {
   var node = {};
