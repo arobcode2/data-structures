@@ -37,4 +37,9 @@ describe('binarySearchTree', function() {
     binarySearchTree.depthFirstLog(func);
     expect(array).to.eql([5, 2, 3, 7]);
   });
+
+  it('should be hella rad', function () {
+    expect(true).to.equal(true);
+})
+   
 });
